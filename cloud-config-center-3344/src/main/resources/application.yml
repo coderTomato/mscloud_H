@@ -1,0 +1,39 @@
+server:
+  port: 3344
+
+
+spring:
+  application:
+    name: cloud-config-center #注册进Eureka服务器的微服务名
+  cloud:
+    config:
+      server:
+        git:
+          # 指定git远程库地址
+          uri: https://gitee.com/coderTomato/microservicecloud-config.git
+      search-paths:
+             - microservicecloud-config
+      # 读取分支
+    label: master
+
+#rabbitmq相关配置
+rabbitmq:
+   host: localhost
+   port: 5672
+   username: guest
+   password: guest
+
+#服务注册到eureka地址
+eureka:
+  client: #客户端注册进eureka服务列表内
+    register-with-eureka: true #表示是否将自己注册进eurekaServer默认为true
+    fetch-registry: true #是否从EurekaServer抓取已有的注册信息，默认为true 单节点无所谓，集群必须为true才能配合ribbon使用负载均衡
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+#rabbitmq 相关配置，暴露bus刷新配置的端点
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: "bus-refresh"
