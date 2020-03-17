@@ -5,3 +5,6 @@
 ## 目录
 
 - [Spring Cloud H版简介及服务工程构建](https://juejin.im/post/5e6ef7946fb9a07ca5305a19)
+- [Eureka服务注册与发现](https://juejin.im/post/5e6f0df3e51d4527110aa477)
+- [Zookeeper服务注册与发现](https://juejin.im/post/5e703cdae51d45270764f8ec)
+- [Consul服务注册与发现](https://juejin.im/post/5e706d016fb9a07c7d007b14)
